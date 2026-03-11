@@ -3,6 +3,7 @@ import React from "react";
 function StatusBadge({ status }) {
 
   let colorClass = "";
+  
 
   if (status === "On Going") {
     colorClass = "bg-green-500";
