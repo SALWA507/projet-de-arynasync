@@ -12,30 +12,37 @@ export default function RegistrationForm({onSubmit}){
     const participant = { name, equipe, niveau };
      onSubmit(participant);
      setName("");
-    setTeam("");
-    setLevel("");
+    setEquipe("");
+    setNiveau("");
   };
  return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="bg-white p-4 rounded-lg shadow mt-4 flex flex-col gap-3">
+
       <input
         type="text"
-        placeholder="Nom"
+        placeholder="Nam"
         value={name}
         onChange={(e) => setName(e.target.value)}
+        className="border p-2 rounded "
       />
       <input
         type="text"
-        placeholder="Équipe"
+        placeholder="Equipe"
         value={equipe}
-        onChange={(e) => setTeam(e.target.value)}
+        onChange={(e) => setEquipe(e.target.value)}
+        className="border p-2 rounded"
       />
       <input
         type="text"
         placeholder="Niveau"
         value={niveau}
-        onChange={(e) => setLevel(e.target.value)}
+        onChange={(e) => setNiveau(e.target.value)}
+        className="border p-2 rounded"
       />
-      <button type="submit" disabled={name.length < 3}>
+      <button type="submit" 
+      disabled={name.length < 3}
+        className="bg-blue-500 text-white p-2 rounded disabled:bg-gray-300"
+        >
         Valider
       </button>
     </form>

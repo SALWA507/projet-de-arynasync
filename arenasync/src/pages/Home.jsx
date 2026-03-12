@@ -28,7 +28,7 @@ export default function Home() {
       <ul>
         {participants.map((p, i) => (
           <li key={i}>
-            {p.name} - {p.team} - {p.level}
+            {p.name} - {p.equipe} - {p.niveau}
           </li>
         ))}
       </ul>
