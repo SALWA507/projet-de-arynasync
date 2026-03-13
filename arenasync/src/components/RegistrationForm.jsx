@@ -1,10 +1,9 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 
-export default function RegistrationForm({onSubmit}){
-
-  const [name,setName] = useState("");
-  const [equipe,setEquipe] = useState("");
-  const [niveau,setNiveau] = useState("");
+export default function RegistrationForm({ onSubmit }) {
+  const [name, setName] = useState("");
+  const [equipe, setEquipe] = useState("");
+  const [niveau, setNiveau] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,8 +23,10 @@ export default function RegistrationForm({onSubmit}){
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-4 rounded-lg shadow mt-4 flex flex-col gap-3">
-
+    <form
+      onSubmit={handleSubmit}
+      className="bg-white p-4 rounded-lg shadow mt-4 flex flex-col gap-3"
+    >
       <input
         type="text"
         placeholder="Nom"
@@ -50,13 +51,9 @@ export default function RegistrationForm({onSubmit}){
         className="border p-2 rounded"
       />
 
-      <button
-        type="submit"
-        className="bg-blue-500 text-white p-2 rounded"
-      >
+      <button type="submit" className="bg-blue-500 text-white p-2 rounded">
         Valider
       </button>
-
     </form>
   );
 }
