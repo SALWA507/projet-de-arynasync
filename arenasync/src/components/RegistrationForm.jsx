@@ -7,15 +7,12 @@ export default function RegistrationForm({ onSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (name.length < 3) {
+    if (name.trim().length < 3) {
       alert("Le nom doit avoir au moins 3 caractères");
       return;
     }
 
-    const participant = { name, equipe, niveau };
-
-    onSubmit(participant);
+    onSubmit({ name, equipe, niveau });
 
     setName("");
     setEquipe("");
@@ -34,7 +31,6 @@ export default function RegistrationForm({ onSubmit }) {
         onChange={(e) => setName(e.target.value)}
         className="border p-2 rounded"
       />
-
       <input
         type="text"
         placeholder="Equipe"
@@ -42,7 +38,6 @@ export default function RegistrationForm({ onSubmit }) {
         onChange={(e) => setEquipe(e.target.value)}
         className="border p-2 rounded"
       />
-
       <input
         type="text"
         placeholder="Niveau"
@@ -50,8 +45,10 @@ export default function RegistrationForm({ onSubmit }) {
         onChange={(e) => setNiveau(e.target.value)}
         className="border p-2 rounded"
       />
-
-      <button type="submit" className="bg-blue-500 text-white p-2 rounded">
+      <button
+        type="submit"
+        className="bg-blue-500 text-white p-2 rounded"
+      >
         Valider
       </button>
     </form>
