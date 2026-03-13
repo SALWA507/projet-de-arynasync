@@ -7,12 +7,14 @@ export default function RegistrationForm({ onSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (name.trim().length < 3) {
       alert("Le nom doit avoir au moins 3 caractères");
       return;
     }
 
-    onSubmit({ name, equipe, niveau });
+    const participant = { name, equipe, niveau };
+    onSubmit(participant);
 
     setName("");
     setEquipe("");
@@ -47,7 +49,7 @@ export default function RegistrationForm({ onSubmit }) {
       />
       <button
         type="submit"
-        className="bg-blue-500 text-white p-2 rounded"
+        className="bg-blue-500 text-white p-2 rounded disabled:bg-gray-300"
       >
         Valider
       </button>
